@@ -75,8 +75,7 @@ Navigate to the project directory where the clean.js file is located.
 Run the following command to execute the script:
    ```shell
    node clean.js
-
-
+   
 
 
 ## License
