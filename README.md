@@ -30,48 +30,51 @@ By following this security tip, you help protect your Slack account and prevent 
 
    ```shell
    npm install @slack/web-api
-   
+
 ## Usage
 
 To obtain a Slack token and set User Token Scopes, follow these step-by-step instructions:
 
-Go to the Slack API website (https://api.slack.com/) and sign in to your Slack workspace.
+1. Go to the Slack API website (https://api.slack.com/) and sign in to your Slack workspace.
 
-Navigate to the "Create a Slack app" page.
+2. Navigate to the "Create a Slack app" page.
 
-Click on the "Create New App" button and provide a name for your app.
+3. Click on the "Create New App" button and provide a name for your app.
 
-Select the Slack workspace where you want to use the app and click on the "Create App" button.
+4. Select the Slack workspace where you want to use the app and click on the "Create App" button.
 
-On the left sidebar, click on "OAuth & Permissions" to access the app's OAuth settings.
+5. On the left sidebar, click on "OAuth & Permissions" to access the app's OAuth settings.
 
-Ensure that you are on the "User Token Scopes" section, not the "Bot Token Scopes." The User Token Scopes are what you need to set for this script.
+6. Ensure that you are on the "User Token Scopes" section, not the "Bot Token Scopes." The User Token Scopes are what you need to set for this script.
 
-Under the "Scopes" section, add the following OAuth scopes to your app:
+7. Under the "Scopes" section, add the following OAuth scopes to your app:
 
-channels:history - View messages and other content in a user's public channels.
-chat:write - Send messages on a user's behalf.
-groups:history - View messages and other content in a user's private channels.
-im:history - View messages and other content in a user's direct messages.
-mpim:history - View messages and other content in a user's group direct messages.
-Scroll up and click on the "Install to Workspace" button to install the app to your Slack workspace.
+   - channels:history - View messages and other content in a user's public channels.
+   - chat:write - Send messages on a user's behalf.
+   - groups:history - View messages and other content in a user's private channels.
+   - im:history - View messages and other content in a user's direct messages.
+   - mpim:history - View messages and other content in a user's group direct messages.
 
-After installation, you will receive an OAuth access token for your app. Copy this token.
+8. Scroll up and click on the "Install to Workspace" button to install the app to your Slack workspace.
 
-Open the clean.js file in a text editor.
+9. After installation, you will receive an OAuth access token for your app. Copy this token.
 
-Replace the placeholder YOUR_USER_OAUTH_TOKEN in the script with the OAuth access token you obtained in the previous step.
+10. Open the `clean.js` file in a text editor.
 
-Replace the placeholder CHANNEL_ID with the actual DM channel ID you want to clean. You can find the channel ID by opening the DM conversation in your Slack workspace and checking the URL. The channel ID is the last part of the URL.
+11. Replace the placeholder `YOUR_USER_OAUTH_TOKEN` in the script with the OAuth access token you obtained in the previous step.
 
-Replace the placeholder USER_ID with your user ID. You can find your user ID by opening your Slack workspace in a browser, clicking on your profile, and checking the URL for your user ID.
+12. Replace the placeholder `CHANNEL_ID` with the actual DM channel ID you want to clean. You can find the channel ID by opening the DM conversation in your Slack workspace and checking the URL. The channel ID is the last part of the URL.
 
-Save the changes to the clean.js file.
+13. Replace the placeholder `USER_ID` with your user ID. You can find your user ID by opening your Slack workspace in a browser, clicking on your profile, and checking the URL for your user ID.
 
-Open your terminal or command prompt.
+14. Save the changes to the `clean.js` file.
 
-Navigate to the project directory where the clean.js file is located.
+15. Open your terminal or command prompt.
 
-Run the following command to execute the script:
-   ```shell
-   node clean.js
+16. Navigate to the project directory where the `clean.js` file is located.
+
+17. Run the following command to execute the script:
+
+    ```shell
+    node clean.js
+    ```
