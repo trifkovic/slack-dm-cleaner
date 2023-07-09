@@ -16,6 +16,7 @@ async function deleteDMMessages() {
       const response = await client.conversations.history({
         channel: channelId,
         cursor,
+        inclusive: true, // Include messages from threads
       });
 
       if (response.ok) {
@@ -25,6 +26,25 @@ async function deleteDMMessages() {
         for (const message of messages) {
           if (message.user === userId) {
             messagesToDelete.push(message.ts);
+          }
+          if (message.reply_count > 0) {
+            const repliesResponse = await client.conversations.replies({
+              channel: channelId,
+              ts: message.ts,
+            });
+
+            if (repliesResponse.ok) {
+              const replies = repliesResponse.messages;
+
+              // Find user's thread replies and collect their timestamps
+              for (const reply of replies) {
+                if (reply.user === userId) {
+                  messagesToDelete.push(reply.ts);
+                }
+              }
+            } else {
+              console.error(repliesResponse.error);
+            }
           }
         }
 
