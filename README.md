@@ -31,6 +31,13 @@ Replace the following placeholders with the appropriate values:
 
 Make sure to save the changes to the `clean.js` file.
 
+2. In your terminal run the script:
+
+   ```shell
+   node clean.js 
+
+
+
 ## License
 
 This project is licensed under the MIT License.
