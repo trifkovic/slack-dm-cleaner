@@ -1,8 +1,8 @@
 const { WebClient } = require('@slack/web-api');
 
 const token = 'YOUR_USER_OAUTH_TOKEN'; // Replace with your user OAuth token (USER! not bot!)
-const channelId = 'CHANNEL_ID'; // Replace  with the actual DM Channel ID (Slack browser, open a DM with somebody, last part of the URL https://app.slack.com/client/WORKSPACE_ID/YOUR_DM_ID)
-const userId = 'USER_ID'; // Replace with your user ID (Slack browser, click on yourself, last part of the URL https://app.slack.com/client/WORKSPACE_ID/YOUR_USER_ID)
+const channelId = 'CHANNEL_ID'; // Replace  with the actual DM Channel ID (Slack browser, open a DM with somebody, last part of the URL https://app.slack.com/client/WORKSPACE_ID/CHANNEL_ID)
+const userId = 'USER_ID'; // Replace with your user ID (Slack browser, click on yourself, last part of the URL https://app.slack.com/client/WORKSPACE_ID/USER_ID)
 
 async function deleteDMMessages() {
   const client = new WebClient(token);
